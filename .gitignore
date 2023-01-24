@@ -1,1 +1,6 @@
 .idea
+/vsphere/.terraform
+/vsphere/.terraform.lock.hcl
+/vsphere/terraform.tfstate
+/vsphere/terraform.tfstate.backup
+/vsphere/terraform.tfvars
