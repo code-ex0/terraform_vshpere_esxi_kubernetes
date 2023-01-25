@@ -109,16 +109,32 @@ resource "vsphere_virtual_machine" "worker" {
           encrypted_passwd = var.encrypted_passwd
           ssh_public_key   = var.ssh_public_key
           packages         = jsonencode(var.packages)
+          hostname         = "worker-${count.index+1}"
         })),
       "hostname" = "${var.hostname_prefix}-${count.index+1}",
     }
   }
 }
 
-output "worker_ip" {
-  value = vsphere_virtual_machine.worker.*.default_ip_address
+output "master" {
+  value = zipmap(
+    flatten(tolist(
+      vsphere_virtual_machine.master.*.name
+    )),
+    flatten(tolist(
+      vsphere_virtual_machine.master.*.default_ip_address
+    )),
+  )
 }
 
-output "worker_name" {
-  value = vsphere_virtual_machine.worker.*.name
+output "worker" {
+  value = zipmap(
+    flatten(tolist(
+      vsphere_virtual_machine.worker.*.name
+    )),
+    flatten(tolist(
+      vsphere_virtual_machine.worker.*.default_ip_address
+    )),
+  )
 }
+// config kubernetes
