@@ -6,10 +6,10 @@ network:
   ethernets:
     ens192:
       dhcp4: false
-      addresses: [192.168.1.31/24]
-      gateway4: 192.168.1.1
+      addresses: [{{IP_ADDRESS}}/{{NETMASK}}]
+      gateway4: {{GATEWAY}}
       nameservers:
-        addresses: [1.1.1.1, 1.1.0.0]
+        addresses: [{{DNS}}]
 EOF
 rm /etc/netplan/50-cloud-init.yaml
 netplan apply
