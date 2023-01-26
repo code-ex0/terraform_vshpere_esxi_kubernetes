@@ -11,5 +11,7 @@ network:
       nameservers:
         addresses: [{{DNS}}]
 EOF
-rm /etc/netplan/50-cloud-init.yaml
+if [ -f /etc/netplan/50-cloud-init.yaml ]; then
+  rm /etc/netplan/50-cloud-init.yaml
+fi
 netplan apply
