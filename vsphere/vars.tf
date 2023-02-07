@@ -33,8 +33,3 @@ variable "ssh_public_key" {
 variable "packages" {
     type = list(string)
 }
-
-variable "hostname_prefix" {
-    type = string
-}
-
