@@ -1,0 +1,6 @@
+vsphere_user= "user"
+vsphere_password= "password"
+vsphere_server= "x.x.x.x"
+rancher_server = "url"
+rancher_secret_key = "secret"
+rancher_access_key = "access"
