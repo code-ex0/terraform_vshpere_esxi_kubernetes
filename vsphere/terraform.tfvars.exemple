@@ -1,0 +1,14 @@
+vsphere_user= "user"
+vsphere_password= "password"
+vsphere_server= "x.x.x.x"
+username="linux user"
+encrypted_passwd = "user password encrypted"
+hostname_prefix = "worker"
+ssh_public_key = ""
+packages=[
+  "curl",
+  "wget",
+  "git",
+  "vim",
+  "docker.io"
+]
