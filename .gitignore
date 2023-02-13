@@ -4,3 +4,9 @@
 /vsphere/terraform.tfstate
 /vsphere/terraform.tfstate.backup
 /vsphere/terraform.tfvars
+
+/rancher/.terraform
+/rancher/.terraform.lock.hcl
+/rancher/terraform.tfstate
+/rancher/terraform.tfstate.backup
+/rancher/terraform.tfvars
